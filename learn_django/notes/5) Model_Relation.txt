@@ -1,0 +1,21 @@
+   There are three types of Model Relations
+    - One-to-One Relations
+    - One-to-Many Relations
+    - Many-to-Many Relations
+
+1. One-to-One Relation
+    If Student is a model and StudentProfile is the model with one-one relation 
+    with Student table then following are the related ORMs
+
+    i) StudentProfile.objects.create(roll_no=2, contact=987438947, student_id=1)
+
+    ii) student = Student = Student.objects.get(id=2)
+        StudentProfile.objects.create(roll_no=1, contact=9736535623, student=student)
+
+    iii) sp = StudentProfile.objects.get(id=2)
+    print(sp.contact)
+    print(sp.roll)
+    print(sp.student.name)
+    print(sp.studnet.email)
+
+    iv) StudentProfile.objects.filter(roll_no=2,student_name="Jon")

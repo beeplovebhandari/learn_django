@@ -1,3 +1,5 @@
+
+
 """
 Django settings for learn_django project.
 
@@ -25,7 +27,7 @@ SECRET_KEY = 'django-insecure-==n9cnh7k##a3s%t-!3d9n+dstr!%%vo%pww3rj_6uyij&=6h#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -37,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'myapp',
+    'temp_inheritance',
+    'tables',
 ]
 
 MIDDLEWARE = [

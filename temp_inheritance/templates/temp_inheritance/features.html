@@ -1,0 +1,25 @@
+{% extends 'temp_inheritance/base.html'%}
+
+{% block content%}
+<h1> Items and Features </h1>
+<table class ="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th scope="col">S.N</th>
+        <th scope="col">Name</th>
+        <th scope="col">Features</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for items in items %}
+      <tr>
+        <th scope="row">{{forloop.counter}}</th>
+        <td>{{items.name}}</td>
+        <td>{{items.feature}}</td>
+      </tr>
+      {% endfor %}
+      
+    </tbody>
+  </table>
+
+{% endblock%}

@@ -1,0 +1,36 @@
+{% extends 'temp_inheritance/base.html'%}
+{% load static %}
+{% block content%}
+    <img src = "{% static 'temp_inheritance/pricing.jpeg' %}" style = "width: 100%">
+
+
+    <center>
+
+      <h1> Laptops Varieties with Price </h1>
+
+    </center>
+    
+
+    <table class ="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th scope="col">S.N</th>
+            <th scope="col">Device Name</th>
+            <th scope="col">Storage</th>
+            <th scope="col">Price(NPR)</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for items in items %}
+          <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{items.name}}</td>
+            <td>{{items.storage}}</td>
+            <td>{{items.price}}</td>
+          </tr>
+          {% endfor %}
+          
+        </tbody>
+      </table>
+
+{% endblock%}
