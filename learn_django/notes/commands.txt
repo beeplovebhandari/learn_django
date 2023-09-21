@@ -5,3 +5,45 @@
 5. python manage.py migrate
 6. python manage.py createsuperuser
 7. python manage.py shell
+
+     
+     
+     
+     
+     
+       **>>==  7. Installing and creating django process
+
+=> python -m venv venv
+=> venv\Scripts\activate
+=> pip install django
+=> django-admin startproject project_name
+=> cd project_name 
+
+=> python manage.py runserver
+
+##link aauxa follow hanni 
+
+###
+ctrl+c (server off garna lai ) 
+###
+clear garna chai = cls
+
+back jana chai = cd ..
+
+** app banauna chai 
+   python manage.py statrtapp <appname>      ***
+
+
+
+
+***********
+for db browser // superuser tyo hru banaune , data base ma lagera herne 
+
+python manage.py migrate
+python manage.py createsuperuser
+
+migration file banaune tarika / migrate garaune tarika :
+
+python manage.py makemigrations
+
+**********

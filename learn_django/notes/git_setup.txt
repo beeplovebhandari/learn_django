@@ -1,0 +1,9 @@
+* git init
+* git status 
+* git add .
+* git status 
+* git commit -m "django project setup"
+* git branch (# main xa vane kei vayeana master xa vane main ma lane , code:)
+* git branch -M main
+* git remote add (# teha github ma deko hunxa yo remote link tyo copy hanne)
+* git push -u origin main
