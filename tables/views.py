@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from.models import Students, Item, StudentProfile
+from.models import Students, Item, StudentProfile, ClassRoom
 
 def student(request):
     students = Students.objects.all()
@@ -11,3 +11,8 @@ def profile (request):
 def item(request):
     a = Item.objects.all()
     return render (request, template_name="tables/items.html", context={"items":a})
+
+def classroom(request):
+    classroom = ClassRoom.objects.all()
+    student = Students.objects.all()
+    return render (request, template_name="tables/classroom.html",context={"classrooms" :classroom, "students": student})
