@@ -39,3 +39,17 @@ class ItemDetail(models.Model):
     
     price = models.IntegerField()
     color = models.CharField(max_length=20)
+
+    
+class Publication(models.Model):
+    title = models.CharField(max_length=20)
+
+    def __str__ (self):
+        return self.title
+
+
+class Article (models.Model):
+    headliine = models.CharField(max_length=20)
+    publications = models.ManyToManyField(Publication)
+    def __str__(self):
+        return self.headline

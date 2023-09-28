@@ -1,0 +1,31 @@
+{% extends 'temp_inheritance/base.html' %}
+
+{% block content %}
+<form class="row g-3" method = "post" action = "{% url 'items_forms' %}">
+  {% csrf_token %}
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Item Name</label>
+      <input type="text" class="form-control" id="name" name="item_name">
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">Company</label>
+      <input type="text" class="form-control" id="inputPassword4" name="company"">
+    </div>
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">mfd</label>
+      <input type="date" class="form-control" id="inputAddress" name="mfd">
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Best Before</label>
+        <input type="date" class="form-control" id="inputPassword4" name="best_before"">
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Description</label>
+        <input type="text" class="form-control" id="inputPassword4" name="description"">
+      </div>
+    </div>
+    
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+
+{% endblock %}
