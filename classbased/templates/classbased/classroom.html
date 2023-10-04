@@ -1,0 +1,35 @@
+{% extends 'crud/base.html' %} {% block content %}
+<h1>{{title}}</h1>
+<form method="post" action="{% url 'first_view' %}">
+  {% csrf_token %} {{form}}
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col">S.N</th>
+      <th scope="col">Name</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for classroom in classrooms %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{classroom.name}}</td>
+      <td>
+        <a
+          class="btn btn-primary"
+          href="{% url 'classroom_update' classroom.id %}"
+          >Update</a
+        >
+        <a
+          class="btn btn-danger"
+          href="{% url 'classroom_delete' classroom.id %}"
+          >Delete</a
+        >
+      </td>
+    </tr>
+    {% endfor %} {% endblock %}
+  </tbody>
+</table>

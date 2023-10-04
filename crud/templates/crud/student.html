@@ -1,6 +1,7 @@
 {% extends 'crud/base.html'%}
 
 {% block content %}
+<h1>{{title}}</h1>
 
 <div>
     <div style="float: right">
@@ -27,9 +28,9 @@
         <td>{{student.age}}</td>
         <td>{{student.classroom.name}}</td>
         <td>
-            <a class="btn btn-primary" href="#">Update</a>
-            <a class="btn btn-warning" href="#">Detail</a>
-            <a class="btn btn-danger" href="#">Delete</a>
+            <a class="btn btn-primary" href="{% url 'update_student' student.id%}">Update</a>
+            <a class="btn btn-warning" href="{% url 'student_detail' student.id %}">Detail</a>
+            <a class="btn btn-danger" href="{% url 'student_delete' student.id %}">Delete</a>
         </td>
     </tr>
     {% endfor %}
