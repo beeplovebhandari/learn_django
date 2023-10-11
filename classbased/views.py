@@ -1,8 +1,9 @@
 from typing import Any
+from django.urls import reverse_lazy
 from django.shortcuts import render, redirect
 from django.views import View
-from django.views.generic import TemplateView
-from crud.models import ClassRoom
+from django.views.generic import TemplateView, CreateView, ListView, DetailView
+from crud.models import ClassRoom, Student, StudentProfile
 from forms.form import ClassRoomModelForm
 
 class FirstView(View):
@@ -29,3 +30,39 @@ class ClassRoomTemplateView(TemplateView):
         title = "Classroom"
         context.update(form=form, classrooms=classrooms, title=title)
         return context
+
+
+
+class ClassRoomView(CreateView):
+    queryset = ClassRoom.objects.all()
+    template_name = "classbased/classroom.html"
+    form_class = ClassRoomModelForm
+    success_url = reverse_lazy('classbased_classroom')
+
+    def get_context_data(self, **kwargs): 
+        context =  super().get_context_data(**kwargs)
+        print(context)
+        context['classrooms'] = ClassRoom.objects.all()
+        context["title"]= "ClassRoom"
+        return(context)
+    
+class StudentView(ListView):
+    queryset = Student.objects.all()
+    template_name = 'classbased/student.html'
+    context_object_name = 'students'
+
+
+class StudentDetailView(DetailView):
+    queryset = Student.objects.all()
+    template_name = "classbased/student_detail.html" 
+
+
+class add_student(CreateView):
+    queryset = Student.objects.all()
+    template_name = "classbased/add_student.html"
+    form_class = ClassRoomModelForm
+    success_url = reverse_lazy('classbased_add_student')
+
+
+
+

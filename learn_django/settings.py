@@ -41,8 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
-PROJECT_APPS= ['myapp', 'temp_inheritance', 'tables', 'forms', 'crud', 'classbased']
-THIRD_PARTY_APPS=['django_extensions']
+PROJECT_APPS= ['myapp', 'temp_inheritance', 'tables', 'forms', 'crud', 'classbased', 'api']
+THIRD_PARTY_APPS=['django_extensions', "rest_framework"]
 
 INSTALLED_APPS+= PROJECT_APPS + THIRD_PARTY_APPS
 
